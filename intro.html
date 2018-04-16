@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+	<style>
+		body{ 
+			position: relative;
+			overflow: hidden;
+			margin: 0;
+			background-color: #000000;
+		}
+		#div_backHolder{
+			text-align: center;
+			animation-duration: 2s;
+			animation-name: fadeIn;
+		}
+		#div_logoHolder{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0%;
+			margin: auto;
+			margin-top: -150px;
+			text-align: center;
+		}
+		#div_logoHolder img:hover{ cursor: pointer; }
+		hr{
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			margin-top: 40px;
+			top: 50%;
+			transform-origin: bottom left;
+			animation-duration: 1.5s;
+			animation-name: wide;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_lightHolder{
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			top: 50%;
+			margin-top: 20px;
+			text-align: center;
+			animation-duration: 2s;
+			animation-name: slide;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_letterHolder{
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			top: 50%;
+			opacity: 0.7;
+			margin-top: 70px;
+			text-align: center;
+		}#div_letterHolder img{
+			margin: 0 10px 0 10px;
+			opacity: 0;
+			width: 60px;
+		}
+		#div_letterHolder img:nth-of-type(1){
+			animation-duration: 1s;
+			animation-delay: 1s;
+			animation-name: apear;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_letterHolder img:nth-of-type(2){
+			animation-duration: 1s;
+			animation-delay: 1.5s;
+			animation-name: apear;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_letterHolder img:nth-of-type(3){
+			animation-duration: 1s;
+			animation-delay: 2s;
+			animation-name: apear;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_letterHolder img:nth-of-type(4){
+			animation-duration: 1s;
+			animation-delay: 2.5s;
+			animation-name: apear;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_infoHolder{
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			top: 50%;
+			opacity: 0.6;
+			color: #ffffff;
+			margin-top: 140px;
+			width: 100%;
+			text-align: center;
+		}
+		#div_infoHolder div{
+			opacity: 0;
+			text-align: center;
+			display: inline-block;
+		}
+		#div_infoHolder div:nth-of-type(1){
+			animation-duration: 1s;
+			animation-delay: 1s;
+			animation-name: fadeIn;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_infoHolder div:nth-of-type(2){
+			animation-duration: 1s;
+			animation-delay: 1.5s;
+			animation-name: fadeIn;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_infoHolder div:nth-of-type(3){
+			animation-duration: 1s;
+			animation-delay: 2s;
+			animation-name: fadeIn;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_infoHolder div:nth-of-type(4){
+			animation-duration: 1s;
+			animation-delay: 2.5s;
+			animation-name: fadeIn;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		#div_copyright{
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			top: 90%;
+			opacity: 0;
+			text-align: center;
+			color: #ffffff;
+			animation-duration: 2s;
+			animation-delay: 3s;
+			animation-name: fadeIn;
+			animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+		}
+		@keyframes fadeIn {
+  			from 	{ opacity: 0; }
+  			to 	{ opacity: 1; }
+		}
+		@keyframes wide {
+  			from { 
+				left: -300px;
+				width: 0px;
+				opacity: 0;
+			}
+  			to { 
+				left: 0px;
+				width: 300px; 
+				opacity: 0.5; 
+			}
+		}
+		@keyframes slide {
+			0%	{ margin-left: -300px; }		
+			75%	{ 
+					margin-left: 300px; 
+					-ms-transform: scale(1, 1);
+    					-webkit-transform: scale(1, 1);
+    					transform: scale(1, 1); 
+				}
+			100%	{
+					margin-left: 300px; 
+					-ms-transform: scale(0, 0);
+    					-webkit-transform: scale(0, 0);
+    					transform: scale(0, 0); 
+				}
+		}
+		@keyframes apear {
+			0%	{ 
+					opacity: 0;
+					-ms-transform: scale(2, 2);
+    					-webkit-transform: scale(2, 2);
+    					transform: scale(2, 2);  
+			}
+			100%	{
+					opacity: 0.6;
+					-ms-transform: scale(1, 1);
+    					-webkit-transform: scale(1, 1);
+    					transform: scale(1, 1); 
+			}
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$('#div_logoHolder').animate({top: $(window).height()/2-100},1000);
+			$('#div_logoHolder img').click(function() {
+				$('body').animate({left: -$(window).width()},1000, function(){$(location).attr('href','main.html');});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="div_backHolder">
+		<img src="img/background.png"/>
+	</div>
+	<div id="div_logoHolder">
+		<img src="img/logo.png"/>
+	</div>
+	<hr>
+	<div id="div_lightHolder">
+		<img src="img/light.png"/>
+	</div>
+	<div id="div_letterHolder">
+		<img src="img/letter_a.png"/>
+		<img src="img/letter_a.png"/>
+		<img src="img/letter_a.png"/>
+		<img src="img/letter_a.png"/>
+	</div>
+	<div id="div_infoHolder">
+		<div>
+			201000000<br>
+			aaaa aaaa
+		</div>
+		<div>
+			201000000<br>
+			aaaa aaaa
+		</div>
+		<div>
+			201000000<br>
+			aaaa aaaa
+		</div>
+		<div>
+			201000000<br>
+			aaaa aaaa
+		</div>
+	</div>
+	<div id="div_copyright">
+		<span>Copyright¨Ï 2018. dreamline91. All rights reserved.</span>
+	</div>
+</body>
+</html>
