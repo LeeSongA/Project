@@ -14,6 +14,12 @@
 			animation-duration: 2s;
 			animation-name: fadeIn;
 		}
+		#canvas{
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+		}
 		#div_logoHolder{
 			position: absolute;
 			left: 0;
@@ -215,13 +221,50 @@
 			$('#div_logoHolder img').click(function() {
 				$('body').animate({left: -$(window).width()},1000, function(){$(location).attr('href','main.html');});
 			});
+
+			$("#canvas").attr("width", $(window).width()).attr("height", $(window).height());
+			drawCircles();
+			
 		});
+
+		function drawCircles(){
+			var canvas = $("#canvas");
+			clearCanvas();
+			for(var i=0;i<20;i++)
+				draw();
+			canvas.animate({opacity: 1},2000,function(){
+				canvas.animate({opacity: 0},2000, function(){drawCircles();});				
+			});
+		}
+
+		function clearCanvas(){
+			var canvas = document.getElementById("canvas");
+			if (canvas.getContext) {
+    				var ctx = canvas.getContext('2d');
+ 				ctx.clearRect(0, 0, canvas.width, canvas.height);
+			}
+		}
+		function draw(){
+			var r = Math.random()*100;
+			var a = Math.random()/5;
+			var x = Math.random()*$(window).width();
+			var y = Math.random()*$(window).height();
+			var canvas = document.getElementById("canvas");
+			if (canvas.getContext) {
+    				var ctx = canvas.getContext('2d');
+ 				ctx.beginPath();
+            			ctx.arc(x, y, r, 0,(Math.PI/180) *360,false);
+            			ctx.fillStyle = "rgba(255, 255, 255, "+a+")";
+          			ctx.fill();
+			}
+		}		
 	</script>
 </head>
 <body>
 	<div id="div_backHolder">
 		<img src="img/background.png"/>
 	</div>
+	<canvas id="canvas"></canvas>
 	<div id="div_logoHolder">
 		<img src="img/logo.png"/>
 	</div>
@@ -254,7 +297,7 @@
 		</div>
 	</div>
 	<div id="div_copyright">
-		<span>Copyright¨Ï 2018. dreamline91. All rights reserved.</span>
+		<span>Copyright¨Ï 2018. thddk0317. All rights reserved.</span>
 	</div>
 </body>
 </html>
