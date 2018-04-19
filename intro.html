@@ -36,7 +36,6 @@
 			margin-top: -150px;
 			text-align: center;
 		}
-		#div_logoHolder img:hover{ cursor: pointer; }
 		hr{
 			position: absolute;
 			left: 0;
@@ -239,14 +238,36 @@
 	<script>
 		$(document).ready(function() {
 			$('#div_logoHolder').animate({top: $(window).height()/2-100},1000);
-			$('#div_logoHolder img').click(function() {
-				$('body').animate({left: -$(window).width()},1000, function(){$(location).attr('href','main.html');});
-			});
+			setTimeout(function(){ 
+				$('#div_logoHolder img').css('cursor','pointer');
+				aniHeart();
+				$('#div_logoHolder img').click(function() {
+					$('#div_logoHolder img').stop();
+					$('#div_logoHolder').css('width',$(window).width());
+					$('#div_logoHolder').css('height',$(window).height());
+					$('#div_logoHolder img').animate({width: 100, margin: 200}, 1000, function(){
+						$('#div_logoHolder img').animate({margin: 0},1000);
+						$('#div_logoHolder').animate({width: 100, height: 100, left: -20, top: -15, margin: 0},1000, function(){
+							$('#div_logoHolder').animate({left: $(window).width() -20},1000);
+							$('body').animate({left: -$(window).width()},1000, function(){$(location).attr('href','main.html');});
+						});
+					});
+				});
+			}, 3000);
+			
 
 			$("#canvas").attr("width", $(window).width()).attr("height", $(window).height());
 			drawCircles();
 			
 		});
+		
+		function aniHeart(){	
+			$('#div_logoHolder img').animate({width: 450, margin: -25},1500,function(){
+				$('#div_logoHolder img').animate({width: 380, margin: 10},1500,function(){
+					aniHeart();
+				});	
+			});
+		}
 
 		function drawCircles(){
 			var canvas = $("#canvas");
