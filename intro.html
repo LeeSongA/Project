@@ -74,12 +74,25 @@
 			opacity: 0.7;
 			margin-top: 70px;
 			text-align: center;
-		}#div_letterHolder img{
-			margin: 0 10px 0 10px;
+		}
+		#div_letterHolder div{
+			margin-top: -10px;
+			text-align: center; 
+			display: inline-block;
+			line-height: 60px;
+		}
+		#div_letterHolder div div{
+			margin: 0px 10px 0 10px;
 			opacity: 0;
 			width: 60px;
+			font-size: 40px;
+			border: 5px solid #fff;
+			border-radius: 60px;
+			color: #fff;
+			float: left;
+			vertical-align: middle;
 		}
-		#div_letterHolder img:nth-of-type(1){
+		#div_letterHolder div div:nth-of-type(1){
 			animation-duration: 1s;
 			animation-delay: 1s;
 			animation-name: apear;
@@ -87,7 +100,7 @@
 			-webkit-animation-fill-mode: forwards;
 			-ms-animation-fill-mode: forwards;
 		}
-		#div_letterHolder img:nth-of-type(2){
+		#div_letterHolder div div:nth-of-type(2){
 			animation-duration: 1s;
 			animation-delay: 1.5s;
 			animation-name: apear;
@@ -95,7 +108,7 @@
 			-webkit-animation-fill-mode: forwards;
 			-ms-animation-fill-mode: forwards;
 		}
-		#div_letterHolder img:nth-of-type(3){
+		#div_letterHolder div div:nth-of-type(3){
 			animation-duration: 1s;
 			animation-delay: 2s;
 			animation-name: apear;
@@ -103,7 +116,7 @@
 			-webkit-animation-fill-mode: forwards;
 			-ms-animation-fill-mode: forwards;
 		}
-		#div_letterHolder img:nth-of-type(4){
+		#div_letterHolder div div:nth-of-type(4){
 			animation-duration: 1s;
 			animation-delay: 2.5s;
 			animation-name: apear;
@@ -124,6 +137,7 @@
 			text-align: center;
 		}
 		#div_infoHolder div{
+			margin: 0px 3px 0 3px;
 			opacity: 0;
 			text-align: center;
 			display: inline-block;
@@ -253,7 +267,7 @@
 		}
 		function draw(){
 			var r = Math.random()*100;
-			var a = Math.random()/5;
+			var a = Math.random()/10;
 			var x = Math.random()*$(window).width();
 			var y = Math.random()*$(window).height();
 			var canvas = document.getElementById("canvas");
@@ -280,10 +294,12 @@
 		<img src="img/light.png"/>
 	</div>
 	<div id="div_letterHolder">
-		<img src="img/letter_a.png"/>
-		<img src="img/letter_a.png"/>
-		<img src="img/letter_a.png"/>
-		<img src="img/letter_a.png"/>
+		<div>
+			<div>B</div>
+			<div>A</div>
+			<div>C</div>
+			<div>A</div>
+		</div>
 	</div>
 	<div id="div_infoHolder">
 		<div>
