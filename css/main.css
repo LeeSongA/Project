@@ -137,10 +137,62 @@ a{
 	text-align: right;
 }
 #div_login div:nth-of-type(1) a{
-	padding: 0 10px 0 0;
+	padding: 5px 10px 0 0;
 	font-weight: bold;
 	color: #ff0000;
 }
+#div_login div:nth-of-type(2){
+	width: 100%;
+	font-size: 20pt;
+	font-weight: bold;
+	text-align: center;
+}
+#div_login hr{
+	margin: 10px;
+	color: #b4977a;
+	border-color: #b4977a;
+	background-color: #b4977a;
+}
+#div_login div:nth-of-type(3){
+	float: left;
+	width: 290px;
+}
+#div_login div:nth-of-type(3) div{
+	left: 10px;
+	margin: 0 0 10px 10px;
+	font-weight: normal;
+	font-size: 10pt;
+	text-align: left;
+}
+#div_login div:nth-of-type(3) input{
+	width: 200px;
+	height: 40px;
+}
+#div_login div:nth-of-type(4){
+	float: left;
+	width: 100px;
+	height:100px;
+	background: #6a5a4c;
+	text-align: center;
+	line-height: 100px;
+}
+#div_login div:nth-of-type(4) span{
+	color: #fff;
+	vertical-align: middle;
+	font-weight: bold;
+}
+#div_login div:nth-of-type(5){
+	clear: both;
+	height: 30px;
+}
+#div_login div:nth-of-type(6){
+	clear: both;
+	margin: 0 0 0 10px;
+	width: 380px;
+	height: 70px;
+	background: #ededed;
+}
+
 @keyframes down{
 	from	{ top: -100%; }
 	to	{ top: 0; }
