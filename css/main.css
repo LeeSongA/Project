@@ -90,7 +90,7 @@ a{
 	-ms-animation-fill-mode: forwards;
 }
 #div_shortcutList img{
-	margin: 18px 10px 0px 10px;
+	margin: 18px 10px 0px 0px;
 	width: 24px;
 	height: 24px;
 }
@@ -104,9 +104,42 @@ a{
 	position: absolute;
 	left: 0;
 	top: 0;
-	width:60px;
+	width: 60px;
 	height: 60px;
 	cursor: pointer;
+}
+#div_mask{  
+	position:absolute;  
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;  
+	background-color: rgba(0,0,0,0);  
+	display:none;  
+}
+#div_login{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 400px;
+	height: 300px;
+	background: #fff;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+	display: none;
+	z-index: 1000;
+}
+#div_login div:nth-of-type(1){
+	width: 100%;
+	text-align: right;
+}
+#div_login div:nth-of-type(1) a{
+	padding: 0 10px 0 0;
+	font-weight: bold;
+	color: #ff0000;
 }
 @keyframes down{
 	from	{ top: -100%; }
