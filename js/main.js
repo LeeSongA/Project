@@ -16,6 +16,8 @@ $(document).ready(function() {
 function selectMenu(number){
 	$("#div_background img").css("display","none");
 	$("#div_contents").css("display","block");
+	$("#div_menuList a").css("color", "#fff");
+	$("#div_menuList a:nth-of-type("+number+")").css("color", "#ffff00");
 	if(number == 1)
 		$("#div_contents").load("introduce.html");
 	else if(number == 4)

@@ -148,7 +148,7 @@ a{
 	text-align: center;
 }
 #div_login hr{
-	margin: 10px;
+	margin: 10px 10px 20px 10px;
 	color: #b4977a;
 	border-color: #b4977a;
 	background-color: #b4977a;
@@ -183,7 +183,7 @@ a{
 }
 #div_login div:nth-of-type(5){
 	clear: both;
-	height: 30px;
+	height: 20px;
 }
 #div_login div:nth-of-type(6){
 	clear: both;

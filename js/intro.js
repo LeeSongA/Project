@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	checkMobile();
 	$('#div_logoHolder').animate({top: $(window).height()/2-100},1000);
 	setTimeout(function(){ 
 		$('#div_logoHolder img').css('cursor','pointer');
@@ -22,6 +23,15 @@ $(document).ready(function() {
 	drawCircles();
 	
 });
+
+function checkMobile(){
+	var filter = "win16|win32|win64|mac";
+	if(navigator.platform){
+		if(filter.indexOf(navigator.platform.toLowerCase())<0)
+			location.href="mobile.html";
+	}
+
+}
 		
 function aniHeart(){	
 	$('#div_logoHolder img').animate({width: 450, margin: -25, opacity: 0.5},1500,function(){
