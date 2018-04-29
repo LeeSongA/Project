@@ -16,3 +16,7 @@ https://pixabay.com/ko/나무-공기-배경-마실-것-블로그-블로거-휴�
 ```
 https://code.jquery.com/jquery-3.3.1.min.js
 ```
+- Typing animation
+```
+http://superkts.pe.kr/helper/view.php?seq=V&seq=3
+```

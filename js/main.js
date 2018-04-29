@@ -1,3 +1,6 @@
+var string_name = "Hello World";
+var int_index = 0;
+var timer_type = null;
 $(document).ready(function() {
 	$('#div_home').click(function(){
 		location.href = "main.html";
@@ -9,12 +12,13 @@ $(document).ready(function() {
 		$("#div_contents").css("height", $(window).height()-$("#div_menu").height()-10);
 		for(var i=1;i<=5;i++)
 			$("#div_menuList a:nth-of-type("+i+")").attr("href", "javascript:selectMenu("+i+");");
+		typeString();
 	}, 3000);
 	
 });
-
 function selectMenu(number){
 	$("#div_background img").css("display","none");
+	$("#div_hello").css("display","none");
 	$("#div_contents").css("display","block");
 	$("#div_menuList a").css("color", "#fff");
 	$("#div_menuList a:nth-of-type("+number+")").css("color", "#ffff00");
@@ -23,7 +27,16 @@ function selectMenu(number){
 	else if(number == 4)
 		$("#div_contents").load("member.html");
 }
+function typeString(){ 
+	$('#div_hello span:nth-of-type(2)').html(string_name.substring(0, int_index) + "_");
+	int_index++;
+	timer_type = setTimeout('typeString()', 100);
 
+	if(string_name.length < int_index){
+		$('#div_hello span:nth-of-type(2)').html(string_name);
+		clearTimeout(timer_type);
+	}
+}
 function login(){
 	$('#div_login').css('display','block');
 	$('#div_mask').css('display','block');
