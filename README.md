@@ -1,4 +1,7 @@
 # Project  
+
+<img src="screenshot/20180429.png?raw=true"> 
+
 ## Setting  
 Insert flag into chrome  
 - **--allow-file-access-from-files**  
@@ -19,4 +22,8 @@ https://code.jquery.com/jquery-3.3.1.min.js
 - Typing animation
 ```
 http://superkts.pe.kr/helper/view.php?seq=V&seq=3
+```
+- Montserrat
+```
+https://fonts.googleapis.com/css?family=Montserrat 
 ```
