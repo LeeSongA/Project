@@ -1,12 +1,14 @@
 # Project  
+[![Node.js](https://img.shields.io/badge/Node.js-v9.11.1-green.svg)]()  
+It is a simple template for projects for Ajou univ.  
+<br>
 
 <img src="screenshot/20180429.png?raw=true"> 
 
-## Setting  
-Insert flag into chrome  
-- **--allow-file-access-from-files**  
-- **--disable-web-security --user-data-dir**   
-
+## Start  
+```
+node app.js
+```
 <br>
 
 ## Reference  
@@ -26,4 +28,8 @@ http://superkts.pe.kr/helper/view.php?seq=V&seq=3
 - Montserrat
 ```
 https://fonts.googleapis.com/css?family=Montserrat 
+```
+- Markdown badge
+```
+http://shields.io/ 
 ```

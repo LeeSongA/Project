@@ -41,7 +41,25 @@ function login(){
 	$('#div_login').css('display','block');
 	$('#div_mask').css('display','block');
 }
-function close(){
-	$('#div_login').css('display','none');
-	$('#div_mask').css('display','none');
+function join(){
+	$('#div_join').css('display','block');
+}
+function close(i){
+	if(i == 1){
+		$('#div_mask').css('display','none');
+		$('#div_login').css('display','none');
+	}
+	else{
+		$('#div_join').css('display','none');
+	}
+}
+function checkLogin(){
+	if($('#ID').val() == "")
+		alert('Check your ID!');
+	else{
+		if($('#PWD').val() == "")
+			alert('Check your PASSWORD!');
+		else
+			$.post("login?id="+$('#ID').val()+"&pwd="+$('#PWD').val(), function(data) { alert(data); });
+	}
 }
