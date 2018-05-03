@@ -60,6 +60,11 @@ function checkLogin(){
 		if($('#PWD').val() == "")
 			alert('Check your PASSWORD!');
 		else
-			$.post("login?id="+$('#ID').val()+"&pwd="+$('#PWD').val(), function(data) { alert(data); });
+			$.post("login?id="+$('#ID').val()+"&pwd="+$('#PWD').val(), function(data) { 
+				if(data == "OK")
+					close(1);
+				else
+					alert(data); 
+			});
 	}
 }
