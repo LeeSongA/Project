@@ -1,6 +1,8 @@
 var string_name = "Hello World";
 var int_index = 0;
 var timer_type = null;
+var key;
+	
 $(document).ready(function() {
 	$('#div_home').click(function(){
 		location.href = "main.html";
@@ -14,7 +16,11 @@ $(document).ready(function() {
 			$("#div_menuList a:nth-of-type("+i+")").attr("href", "javascript:selectMenu("+i+");");
 		typeString();
 	}, 3000);
-	
+
+	$.get("/public", function(data) { 
+		key = new JSEncrypt();
+	        key.setPublicKey(data);
+	});	
 });
 function selectMenu(number){
 	$("#div_background img").css("display","none");
@@ -60,7 +66,7 @@ function checkLogin(){
 		if($('#PWD').val() == "")
 			alert('Check your PASSWORD!');
 		else
-			$.post("login?id="+$('#ID').val()+"&pwd="+$('#PWD').val(), function(data) { 
+			$.post("login?id="+$('#ID').val()+"&pwd="+key.encrypt($('#PWD').val()), function(data) { 
 				if(data == "OK")
 					close(1);
 				else
