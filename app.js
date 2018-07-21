@@ -1,5 +1,6 @@
 ﻿const express = require('express');
 const app = express();
+const session = require('express-session');
 
 const path = require('path');
 const mysql = require('mysql');
@@ -19,6 +20,12 @@ var publicKey;
 var privateKey;
 var key;
 
+app.use(session({
+   secret: '#$@!!$!##$$#!',
+   resave: false,
+   saveUninitialized: true,
+   cookie: { maxAge: 1000 * 60 * 60 }
+}));
 app.use(express.static(path.join(__dirname, '')));
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '', 'intro.html'));

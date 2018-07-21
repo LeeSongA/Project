@@ -133,6 +133,9 @@ a{
 	height: 24px;
 }
 #img_logo{
+	position: absolute;
+	left: 0;
+	top: 0;
 	width: 100px;
 	height: 100px;
 	margin: -15px 0px 0px -20px;
@@ -145,6 +148,8 @@ a{
 	width: 60px;
 	height: 60px;
 	cursor: pointer;
+	overflow: hidden;
+	z-index: 5;
 }
 #div_mask{  
 	position:absolute;  
